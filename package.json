@@ -1,0 +1,13 @@
+{
+  "name": "Font-Optimizer",
+  "version": "0.0.1",
+  "description": "A NPM for font-optimizer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zation/font-optimizer.git"
+  },
+  "dependencies": {
+    "webfonts": "~0.1.1",
+    "express": "~3.3.4"
+  }
+}
