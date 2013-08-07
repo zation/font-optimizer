@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Font Optimizer</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <select class="font-type">
+    <% files.forEach(function(file){ %>
+      <option value="<%=file%>"><%=file%></option>
+    <% }) %>
+  </select>
+  <div class="content" contenteditable="true">
+    这是测试内容，可以随意修改，修改以后请点击“重新生成字体”按钮。
+  </div>
+  <button class="regenerate">
+    生成字体
+  </button>
+  <a class="download" href="#">
+    下载字体
+  </a>
+  JSON Result:
+  <div class="result"></div>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

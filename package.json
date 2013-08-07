@@ -7,7 +7,9 @@
     "url": "https://github.com/zation/font-optimizer.git"
   },
   "dependencies": {
-    "express": "~3.3.4"
+    "express": "~3.3.4",
+    "ejs": "~0.8.4",
+    "uuid": "~1.4.1"
   },
   "engines": {
     "node": "0.10.x",
