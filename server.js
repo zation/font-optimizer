@@ -35,4 +35,4 @@ app.get('/font', function(req, res) {
 
 app.use('/fonts', express.static('./fonts'));
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);

@@ -1,6 +1,6 @@
 $(function() {
   $.ajax({
-    url: 'http://localhost:3000/font',
+    url: 'http://webfont.herokuapp.com/font',
     dataType: 'jsonp',
     data: {
       'charactors': '昨日'
@@ -8,7 +8,7 @@ $(function() {
     success: function(data) {
       var fontface = '@font-face {' +
         'font-family: test;' +
-        'src: url(http://localhost:3000' + data.fontPath + ');' +
+        'src: url(http://webfont.herokuapp.com/' + data.fontPath + ');' +
         'font-weight:400;' +
         '}';
       $('head').append('<style>' + fontface + '</style>');
