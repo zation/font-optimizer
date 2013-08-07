@@ -1,12 +1,12 @@
 var express = require('express');
 var spawn = require('child_process').spawn;
+var fs = require('fs');
 
 var app = express();
 
-app.get('/font', function(req, res) {
+function subset(req, res) {
   var charactors = req.param('charactors');
-  console.log(charactors);
-  var output = '/fonts/output.ttf';
+  var output = 'fonts/output.ttf';
   var input = '../font-lib/test.ttf'
   var subset = spawn('perl', [
     'subset.pl',
@@ -31,6 +31,20 @@ app.get('/font', function(req, res) {
       'fontPath': output
     });
   });
+}
+
+app.get('/font', function(req, res) {
+  
+  fs.exists('./fonts/', function(exists) {
+    if (!exists) {
+      fs.mkdir('fonts', function() {
+        subset(req, res);
+      });
+    } else {
+      subset(req, res);
+    }
+  });
+  
 });
 
 app.use('/fonts', express.static('./fonts'));
